@@ -1,0 +1,121 @@
+<!-- this is a test website to hold a journal. The journal auto-formts entries as can be navigated by the drop down menu organized by entry and date-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Menu Testing</title> <!-- Tab title-->
+    <style>
+        .dropdown { /*creating a series of classes within the document item*/
+            width: 160px;
+            padding: 10px;
+        }
+        .dropdown-button {
+            padding: 10px;
+            border: 1 px solid black;
+            cursor: pointer;
+            background-color: grey;
+        }
+        /*Hides the menu items*/
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            min-width: 160px;
+        }
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .journal-entry {
+            font-family: garamond;
+            font-size: 16px;
+            text-align: justify;
+            text-indent: 2em;
+            padding: 5%;
+            background-color: lightgray;
+        }
+        body {
+            background: white;
+            margin: 10%;
+        }
+    </style>
+</head>
+
+    <body>
+        <div class = "dropdown">
+            <div class = "dowpdown-button" id = "dropdownButton">Menu</div> <!-- Main button label -->
+
+            <!-- Dropdown list items -->
+            <div class = "menu" id = "optionsMenu">
+                <div class = "menu-item"><a href = "#section1">Item 1</a></div> 
+                <div class = "menu-item"><a href = "#section2">Item 2</a></div>
+                <div class = "menu-item"><a href = "#section3">Item 3</a></div>
+            </div> <!-- # creates a unique identifier for elements on a webpage-->
+        </div>
+
+        <script>
+            //JavaScript for dropdown functionality
+            const dropdownButton = document.getElementById("dropdownButton");
+            const optionsMenu = document.getElementById("optionsMenu");
+            const dropdownItems = document.querySelectorAll(".menu-item");
+
+            //Toggle dropdown menu visibility
+            dropdownButton.addEventListener("click", () => {
+                if(optionsMenu.style.display === "block"){
+                    optionsMenu.style.display = "none";
+                } else{
+                    optionsMenu.style.display = "block";
+                }
+            });
+
+            //Update the dropdown text and close the menu on click
+            dropdownItems.forEach((item) => {
+                item.addEventListener("click", () => {
+                    optionsMenu.style.display = "none";
+                });
+            });
+
+            //Close the menu if clicked outside
+            document.addEventListener("click", (event) => {
+                if(!event.target.closest(".dropdown")) {
+                    optionsMenu.style.display = "none";
+                }
+            });
+        </script>
+
+        <div class = "journal-entry" id = "section1">
+            This is a test paragraph<br>
+            <p>
+            Lorem ipsum dolor sit amet. In labore enim est accusantium perspiciatis vel velit delectus ea nihil provident. Qui facilis reiciendis et recusandae deleniti aut aperiam dolore. A omnis odit non internos consequuntur ea illo dolores aut amet sunt et itaque harum? Ut culpa fuga a illo eius At quia sequi ea facere corrupti est itaque quod. Ut maiores praesentium et internos sint 33 ducimus veniam ad Quis iusto aut possimus eaque sed quam tempore id commodi facere!
+            </p><p>
+            Ad dolor quidem cum facilis culpa qui quidem iste. Eos perspiciatis quidem qui debitis doloribus aut doloribus voluptatem. Eum vero libero aut perspiciatis culpa in odio fugit aut delectus asperiores sed maiores aliquam. Eos nesciunt consequatur sed autem velit et possimus enim et Quis tempora. Aut sunt cupiditate aut animi mollitia et beatae minima sit quisquam aperiam et officiis fugit qui dolores provident At expedita commodi! Eos maiores voluptatem 33 illum omnis sit numquam amet ut enim laborum eum praesentium aperiam? Non molestiae fugit et quia dolores in delectus asperiores et corporis repudiandae et rerum illum sed magnam recusandae quo dolores velit.
+            </p><p>
+            Ea quis corrupti et consequatur cupiditate et velit alias qui nisi modi ex quod odit quo voluptatum illum. Hic distinctio aspernatur aut molestias facilis et molestiae soluta ut suscipit consequuntur. Non itaque quae et galisum reiciendis non illo dolor ut maiores eius. Eum voluptas quibusdam eos nemo similique sed rerum itaque est provident rerum sed quos quas. Eum quibusdam delectus et voluptas porro id suscipit culpa qui dolorum quod ut nemo quia. Eum galisum excepturi ut officia dolores rem velit voluptatibus et rerum reprehenderit sit animi modi et corporis error. Nam rerum labore non magni repellat aut voluptatum dolor.
+            </p><br>
+            End of paragraph 1.
+        </div>
+        <br>
+        <div class = "journal-entry" id = "section2">
+            This is paragraph 2<br>
+            <p>Lorem ipsum dolor sit amet. Vel similique enim a corrupti corporis ut natus corporis sed quas voluptatem ut ipsam accusamus sed corporis fugiat. Est nihil ipsum est quibusdam doloremque qui alias nisi. Id provident consequuntur eos dolor tempora qui iste dicta est quas quibusdam id doloremque fugit qui animi placeat aut repudiandae quod. Aut consequatur velit et corporis iste id omnis nobis id dolorem unde quo beatae excepturi. Et dolorem necessitatibus sed voluptate distinctio et corrupti totam qui dolorem nobis id esse doloremque. </p><p>Non velit sunt ex dolore dolores et libero omnis. Quo iusto perferendis id eaque tenetur et corporis fuga quo numquam delectus in omnis voluptatem. Ea fugiat earum qui dolorum incidunt qui eius corrupti qui modi quod. Nam dolore nihil a deleniti deserunt qui fugit obcaecati et reprehenderit ratione nam modi voluptas cum natus officiis sit officiis autem! Ea libero debitis in vitae quod est pariatur dolore rem quia officia. </p><p>Et dicta autem quo adipisci autem qui cupiditate dolor sit harum enim quo deserunt voluptatem et obcaecati adipisci cum soluta repellat? Est repellendus voluptate nam ipsam corporis ut nemo atque. Ut minus repellat sit exercitationem velit hic esse voluptas non omnis eligendi aut reprehenderit error eos vero repellendus. In sunt eligendi sed impedit autem et excepturi vero sed dolores quisquam. Id odit eligendi ut consectetur aspernatur sed dolore repellendus ea dolor voluptate sed laudantium ullam. </p>
+
+            <br>End of paragraph 2
+        </div>
+        <br>
+        <div class = "journal-entry" id = "section3">
+            This is paragraph 3<br>
+            <p>
+            Lorem ipsum dolor sit amet. 33 vitae officia eum iure suscipit qui magni suscipit eum sequi error. Ut debitis voluptas sed corporis consequatur est omnis sint! Est autem facere aut voluptatem architecto est voluptate quos 33 deleniti dicta. Et tenetur impedit et voluptatem optio sed error facilis et voluptatem itaque sit quia consequatur in omnis omnis. Eos asperiores quis ab quia libero ut dolorem iste ut nihil assumenda ut cumque voluptate ut quia voluptatum. Et labore reiciendis aut optio molestiae et debitis dolor. Sit vitae odit et impedit autem ut laborum dolore?
+            </p>
+            <p>
+            Et maiores sapiente non repellat praesentium ad incidunt vitae. Quo quaerat omnis a reprehenderit sint id dolor incidunt ex mollitia saepe qui laborum mollitia ut aliquid sint aut voluptatem temporibus. Eum quam enim eos odio officiis ad repellat fugiat in veniam consequuntur. Et aliquam autem aut dolorum earum et sint maiores aut aliquid dicta in ipsum neque cum quibusdam autem sit dolores dolorem. Aut possimus omnis sit dolor molestiae qui rerum dolore quo pariatur quos. Et odio labore sed ipsam dolorem ut obcaecati accusantium et voluptas cumque nam rerum omnis. Ex debitis quibusdam et facere unde qui sapiente minus sed exercitationem laborum et dignissimos vitae aut distinctio soluta.
+            </p><p>
+            Qui voluptatem architecto nam fugit similique est voluptas reprehenderit! Aut Quis voluptatem et quia corrupti ut accusantium pariatur. Est recusandae voluptate eum voluptatem sunt ut quos molestias non voluptatem doloremque et quibusdam facere qui maiores dolores! Ex galisum provident et voluptas itaque et nihil optio rem consequuntur eaque vel Quis porro! Aut totam earum et reiciendis corporis est quis dolore id tempora repellat. Qui nulla quidem qui error unde ab magnam omnis in quia sequi quo laborum perspiciatis ab harum dolore aut excepturi iste. Id enim perspiciatis sit cupiditate quos quo officia quis 33 praesentium voluptatibus est enim quos in quod maiores in galisum galisum. Est tempore ipsum hic galisum dolorum eum rerum nihil et blanditiis tempora et optio aliquam et officia corrupti. Et dicta autem sed esse galisum ad voluptates rerum sed sint nemo est consequuntur omnis et molestiae quia et enim soluta.
+            </p>
+            <br>End of paragraph 3.
+        </div>
+
+
+    </body>
+</html>
